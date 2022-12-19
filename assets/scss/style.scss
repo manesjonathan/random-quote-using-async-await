@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Inter");
+body {
+  margin: 0;
+  background-color: #adb5bd;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  article {
+    blockquote {
+      font-family: Inter;
+      margin: 0;
+      p {
+        font-size: 1.25rem;
+      }
+
+      figcaption {
+        text-align: right;
+        font-family: Inter;
+        font-size: 5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  main {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+
+    article {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      max-width: 100%;
+      color: white;
+    }
+  }
+}
