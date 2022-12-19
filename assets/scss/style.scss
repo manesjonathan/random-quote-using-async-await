@@ -26,6 +26,7 @@ main {
 
   article {
     display: flex;
+    flex-direction: column;
     text-align: center;
     align-items: center;
     margin: 5%;
@@ -48,8 +49,6 @@ main {
         animation: lds-dual-ring 1.2s linear infinite;
       }
     }
-
-    
 
     blockquote {
       position: relative;
