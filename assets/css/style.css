@@ -1,36 +1,81 @@
-@import url("https://fonts.googleapis.com/css?family=Inter");
 body {
   margin: 0;
-  background-color: #adb5bd;
+  background-image: url("../image/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header button {
+  background-color: #ffee00;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1%;
+  text-align: center;
+  width: 100%;
+  border: 0;
+  font-size: 1rem;
+  color: #343a40;
+  text-transform: uppercase;
 }
 
 main {
   display: flex;
   flex-direction: column;
 }
+main article {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 5%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+main article .spinner {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+main article .spinner:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
 main article blockquote {
-  font-family: Inter;
+  position: relative;
+  font-family: "Barlow Condensed", sans-serif;
+  align-self: center;
+  width: 100%;
   margin: 0;
 }
-main article blockquote p {
+main article blockquote h2 {
+  font-family: "Abril Fatface", cursive;
   font-size: 1.25rem;
-}
-main article blockquote figcaption {
-  text-align: right;
-  font-family: Inter;
-  font-size: 5rem;
+  font-weight: normal;
+  line-height: 1;
+  border: 2px solid #fff;
+  border: solid 2px;
+  border-radius: 15px;
+  padding: 5%;
 }
 
-@media screen and (min-width: 480px) {
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (min-width: 992px) {
   main {
     display: grid;
-    grid-template: repeat(4, 1fr)/repeat(4, 1fr);
-  }
-  main article {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    max-width: 100%;
-    color: white;
+    grid-template-columns: repeat(4, 1fr);
   }
 }/*# sourceMappingURL=style.css.map */
