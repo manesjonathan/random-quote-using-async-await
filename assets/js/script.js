@@ -26,7 +26,7 @@ async function generateQuote() {
 function displayQuote(article, quote, presumedAge) {
     let figure = document.createElement("figure");
     let blockquote = document.createElement("blockquote");
-    blockquote.setAttribute("cite", "https://thatsthespir.it/")
+    blockquote.setAttribute("cite", "https://thatsthespir.it/");
     let h2 = document.createElement("h2");
     let h4 = document.createElement("h4");
 
