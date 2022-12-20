@@ -7,14 +7,14 @@ generateButton.addEventListener("click", () => generateQuote());
 async function generateQuote() {
     article.innerHTML = null;
     try {
-        let response = await fetch("https://thatsthespir.it/api");
-        let quote = await response.json();
-        let spinner = document.createElement("div");
+        const response = await fetch("https://thatsthespir.it/api");
+        const quote = await response.json();
+        const spinner = document.createElement("div");
         spinner.className = "spinner";
         article.appendChild(spinner);
         main.prepend(article);
 
-        let presumedAge = await fetchName(quote.author.split(" ")[0]);
+        const presumedAge = await fetchName(quote.author.split(" ")[0]);
         displayQuote(article, quote, presumedAge);
         spinner.style.display = "none";
 
@@ -37,15 +37,14 @@ function displayQuote(article, quote, presumedAge) {
     figure.appendChild(blockquote);
     blockquote.appendChild(h4);
 
-
     if (quote.photo.length > 0) {
         console.log(quote.photo);
         let img = document.createElement("img");
+        let author = quote.author;
         img.setAttribute("src", quote.photo);
+        img.setAttribute("alt", `Picture of ${author}`);
         blockquote.appendChild(img);
-
     }
-
     article.appendChild(figure);
 }
 
