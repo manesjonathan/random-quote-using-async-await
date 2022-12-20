@@ -31,14 +31,19 @@ function displayQuote(article, quote, presumedAge) {
     let h4 = document.createElement("h4");
 
     h2.innerText = quote.quote;
-    h4.innerText = quote.author + "\n" + "Presumed age: " + presumedAge + " years old";
+
+    if (presumedAge !== null) {
+        h4.innerText = quote.author + "\n" + "Presumed age: " + presumedAge + " years old";
+    } else {
+        h4.innerText = quote.author;
+
+    }
 
     blockquote.appendChild(h2);
     figure.appendChild(blockquote);
     blockquote.appendChild(h4);
 
     if (quote.photo.length > 0) {
-        console.log(quote.photo);
         let img = document.createElement("img");
         let author = quote.author;
         img.setAttribute("src", quote.photo);
@@ -51,6 +56,7 @@ function displayQuote(article, quote, presumedAge) {
 async function fetchName(name) {
     let response = await fetch("https://api.agify.io/?name=" + name);
     let data = await response.json();
+    if (data.error !== null) { return null };
     return data.age;
 }
 

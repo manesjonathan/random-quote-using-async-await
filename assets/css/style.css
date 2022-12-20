@@ -86,7 +86,6 @@ main article blockquote h2 {
   font-weight: normal;
   line-height: 1;
   border: 2px solid #fff;
-  border: solid 2px;
   border-radius: 15px;
   padding: 5%;
 }
