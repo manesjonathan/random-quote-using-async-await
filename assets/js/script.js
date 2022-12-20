@@ -1,12 +1,14 @@
 const main = document.querySelector("main")
+const article = document.createElement("article");
+
 const generateButton = document.querySelector(".generate-button")
 generateButton.addEventListener("click", () => generateQuote());
 
 async function generateQuote() {
+    article.innerHTML = null;
     try {
         let response = await fetch("https://thatsthespir.it/api");
         let quote = await response.json();
-        let article = document.createElement("article");
         let spinner = document.createElement("div");
         spinner.className = "spinner";
         article.appendChild(spinner);
@@ -34,6 +36,16 @@ function displayQuote(article, quote, presumedAge) {
     blockquote.appendChild(h2);
     figure.appendChild(blockquote);
     blockquote.appendChild(h4);
+
+
+    if (quote.photo.length > 0) {
+        console.log(quote.photo);
+        let img = document.createElement("img");
+        img.setAttribute("src", quote.photo);
+        blockquote.appendChild(img);
+
+    }
+
     article.appendChild(figure);
 }
 

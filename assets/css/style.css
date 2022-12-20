@@ -6,7 +6,7 @@ body {
 }
 
 header button {
-  background-color: #ffee00;
+  background-color: #00ffd9;
   color: #000;
   cursor: pointer;
   font-weight: bold;
@@ -17,17 +17,31 @@ header button {
   font-size: 1rem;
   color: #343a40;
   text-transform: uppercase;
+  transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+}
+header button:hover {
+  background-color: #fff;
+  border-color: transparent;
+  color: #444;
+}
+header button i {
+  margin-right: 1%;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 main article {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
   align-items: center;
+  width: 90%;
+  min-height: 35vh;
   margin: 5%;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
@@ -48,12 +62,23 @@ main article .spinner:after {
   border-color: #fff transparent #fff transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
-main article blockquote {
+main article img {
   position: relative;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 1%;
+}
+main article blockquote {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
   font-family: "Barlow Condensed", sans-serif;
-  align-self: center;
   width: 100%;
-  margin: 0;
+  margin: auto;
 }
 main article blockquote h2 {
   font-family: "Abril Fatface", cursive;
@@ -77,6 +102,6 @@ main article blockquote h2 {
 @media screen and (min-width: 992px) {
   main {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }/*# sourceMappingURL=style.css.map */
